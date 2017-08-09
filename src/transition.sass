@@ -1,0 +1,19 @@
+=MoveColor($speed: $fast ease)
+  transition: color $fast
+=MoveBg($speed: $fast ease)
+  transition: background $speed
+=MoveColors($speed: $fast ease) 
+  transition: background $speed, color $speed
+
+=MoveGpu($t-speed: $fast ease, $o-speed: $fast ease)
+  transition: transform $t-speed, opacity $o-speed
+=MoveMatrix($speed: $fast ease)
+  transition: transform $speed
+=MoveShader($speed: $fast ease)
+  transition: opacity $speed
+
+=TranSpeed($s: $fast)
+  transition-duration: $s
+
+=MovePath($s: $fast)
+	transition: d $s

@@ -1,0 +1,45 @@
+=Translate($x:0, $y:0, $origin: null)
+  transform: translate($x, $y) 
+  @if($origin != null)
+    transform-origin: $origin
+
+=Translate3($x:0, $y: 0, $z: 0, $origin: null)
+  transform: translate3d($x, $y, $z) 
+    @if($origin != null)
+      transform-origin: $origin
+
+=Scale($x: 1, $y: 1, $origin: null)
+  transform: scale($x, $y)
+  @if($origin != null)
+    transform-origin: $origin
+
+=Rotate($deg:0, $origin: null) 
+  transform: rotate($deg)
+  @if($origin != null)
+    transform-origin: $origin
+  @content
+
+=Show
+  opacity: 1
+=Fade
+  opacity: 0
+
+=PushDown($v: 100%)
+  +Translate(0, $v)
+=PushUp($v: 100%)
+  +Translate(0, -1 * $v)
+
+=NoScaleY
+  +Scale($y: 0)
+=NoScaleX
+  +Scale($x: 0)
+
+=AboutCenter
+  transform-origin: center
+=ReflectX
+  +Scale(-1, 1)
+=ReflectY
+  +Scale(1, -1)
+
+=Preserve3D
+  transform-style: preserve-3d
